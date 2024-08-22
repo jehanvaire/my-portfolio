@@ -24,13 +24,17 @@ const About: React.FC = () => {
       >
         <h1>About Me</h1>
         <div className="about-grid">
-          <motion.img
-            src={moi}
-            alt="Adrien BONY"
-            className="profile-pic"
+          <motion.div
+            className="profile-pic-container"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
-          />
+          >
+            <img
+              src={moi}
+              alt="Adrien BONY"
+              className="profile-pic"
+            />
+          </motion.div>
           <div className="about-text">
             <p>
               Hello! I'm Adrien, a passionate web developer with a keen eye for creating beautiful, functional, and user-friendly websites.
@@ -57,7 +61,7 @@ const About: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.2, delay: 0.1, type: 'spring' }}
+                transition={{ duration: 0.2, delay: index * 0.1, type: 'spring' }}
               >
                 {skill}
               </motion.div>

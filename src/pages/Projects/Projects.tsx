@@ -4,25 +4,28 @@ import { useTheme } from '../../ThemeContext';
 import SEO from '../../components/common/SEO';
 import '../../styles/global.css';
 import './Projects.css';
+import sudoku from '../../assets/sudoku.jpg';
+import event from '../../assets/events.jpg';
+import social from '../../assets/social-media.png';
 
 const projectsData = [
   {
     title: "Sudoku Solver from Image",
     description: "A Python project that solves Sudoku puzzles from images. Includes a Flutter mobile app and a Flask API. Uses OpenCV and TensorFlow.",
     technologies: ["Python", "Flutter", "Flask", "OpenCV", "TensorFlow"],
-    image: "/path-to-sudoku-solver-image.jpg"
+    image: sudoku
   },
   {
     title: "Event Management Website",
     description: "A web-based event management system using Google Maps API. Built with HTML/CSS/JavaScript and connected to Firebase. Includes an Android companion app.",
     technologies: ["HTML", "CSS", "JavaScript", "Firebase", "Google Maps API", "Android"],
-    image: "/path-to-event-management-image.jpg"
+    image: event
   },
   {
     title: "Social Network Mobile App",
     description: "A mobile application combining features of LinkedIn and Instagram. Built with React Native, uses REST API, and follows MVC architecture. Includes a web application counterpart.",
     technologies: ["React Native", "REST API", "MVC", "Web Development"],
-    image: "/path-to-social-network-image.jpg"
+    image: social
   }
 ];
 

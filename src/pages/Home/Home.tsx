@@ -7,6 +7,9 @@ import { useTheme } from '../../ThemeContext';
 import moi from '../../assets/jehan.png';
 import '../../styles/global.css';
 import './Home.css';
+import sudoku from '../../assets/sudoku.jpg';
+import event from '../../assets/events.jpg';
+import social from '../../assets/social-media.png';
 
 const Home: React.FC = () => {
   const { theme } = useTheme();
@@ -35,7 +38,9 @@ const Home: React.FC = () => {
         </section>
 
         <section className="about">
-          <img src={moi} alt="Your Name" className="profile-pic" />
+          <div className="profile-pic-container">
+            <img src={moi} alt="Adrien BONY" className="profile-pic" />
+          </div>
           <p>
             I'm a full stack developer with a passion for creating web applications. I'm currently working at <a href="https://www.infotel.com" target="_blank" rel="noopener noreferrer">Infotel</a> as a full stack developer.
           </p>
@@ -44,9 +49,21 @@ const Home: React.FC = () => {
         <section className="projects">
           <h2>Featured Projects</h2>
           <div className="project-grid">
-            <ProjectCard title="Project 1" description="Short description" imageUrl="/project1.jpg" />
-            <ProjectCard title="Project 2" description="Short description" imageUrl="/project2.jpg" />
-            <ProjectCard title="Project 3" description="Short description" imageUrl="/project3.jpg" />
+            <ProjectCard 
+              title="Sudoku Solver from Image" 
+              description="A Python project that solves Sudoku puzzles from images. Includes a Flutter mobile app and a Flask API. Uses OpenCV and TensorFlow." 
+              imageUrl={sudoku} 
+            />
+            <ProjectCard 
+              title="Event Management Website" 
+              description="A web-based event management system using Google Maps API. Built with HTML/CSS/JavaScript and connected to Firebase. Includes an Android companion app." 
+              imageUrl={event} 
+            />
+            <ProjectCard 
+              title="Social Network Mobile App" 
+              description="A mobile application combining features of LinkedIn and Instagram. Built with React Native, uses REST API, and follows MVC architecture. Includes a web application counterpart." 
+              imageUrl={social} 
+            />
           </div>
         </section>
 

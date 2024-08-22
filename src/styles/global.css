@@ -10,13 +10,14 @@
 }
 
 * {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --text: #ebf1f4;
-  --background: #05090a;
-  --header-background: #0f1a1d;
+  --background: #121920;
+  --header-background: #1a242e;
   --primary: #2c96ba;
   --secondary: #106b89;
   --accent: #038cba;
@@ -26,7 +27,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   color: var(--text);
   background-color: var(--background);
   transition: var(--transition);
@@ -40,29 +41,6 @@ body {
   gap: 1rem;
 }
 
-/* SkillBar styles */
-.skill-bar {
-  margin-bottom: 1rem;
-}
-
-.skill-info {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.5rem;
-}
-
-.skill-progress {
-  background-color: #e0e0e0;
-  border-radius: 10px;
-  height: 10px;
-  overflow: hidden;
-}
-
-.skill-progress-bar {
-  background-color: var(--primary);
-  height: 100%;
-}
-
 /* Add responsive styles as needed */
 @media (max-width: 768px) {
   .about {
@@ -72,7 +50,13 @@ body {
 }
 
 /* Add theme-specific styles for each component */
-.App, .home-container, .about-page, .projects-page, .skills-page, .footer, .project-card {
+.App,
+.home-container,
+.about-page,
+.projects-page,
+.skills-page,
+.footer,
+.project-card {
   background-color: var(--background);
   color: var(--text);
 }
@@ -98,54 +82,13 @@ body {
   height: 0;
 }
 
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: #2196F3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-.sun, .moon {
+.sun,
+.moon {
   position: absolute;
   width: 20px;
   height: 20px;
   top: 7px;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .sun {

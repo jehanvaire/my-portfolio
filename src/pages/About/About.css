@@ -19,10 +19,18 @@
   align-items: start;
 }
 
+.profile-pic-container {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
 .profile-pic {
   width: 100%;
-  max-width: 300px;
-  border-radius: 50%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .skills-grid {

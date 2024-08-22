@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import './home.css';
 
 interface ProjectCardProps {
@@ -13,6 +14,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   imageUrl,
 }) => {
+  const navigate = useNavigate();
+
+  const handleLearnMore = () => {
+    navigate('/projects');
+  };
+
   return (
     <motion.div
       className="project-card"
@@ -30,6 +37,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           className="project-button"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
+          onClick={handleLearnMore}
         >
           Learn More
         </motion.button>

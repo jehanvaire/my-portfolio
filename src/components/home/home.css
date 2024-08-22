@@ -33,3 +33,21 @@
 .project-button:hover {
   background-color: var(--accent);
 }
+
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  display: block;
+}
+
+.profile-pic-container {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-block;
+}
