@@ -15,7 +15,7 @@ function App() {
     <ThemeProvider>
       <Router>
         <Header />
-        <main>
+        <main className="main-content">
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
               <Route path="/" element={<Home />} />

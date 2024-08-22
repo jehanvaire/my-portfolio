@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useTheme } from '../ThemeContext';
-import SEO from '../components/SEO';
+import { useTheme } from '../../ThemeContext';
+import SEO from '../../components/SEO';
+import moi from '../../assets/jehan.png';
 import '../styles/global.css';
 
 const About: React.FC = () => {
@@ -23,7 +24,7 @@ const About: React.FC = () => {
         <h1>About Me</h1>
         <div className="about-grid">
           <motion.img
-            src="../../public/jehan.png"
+            src={moi}
             alt="Your Name"
             className="profile-pic"
             whileHover={{ scale: 1.05 }}

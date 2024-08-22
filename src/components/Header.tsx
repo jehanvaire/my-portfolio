@@ -12,7 +12,7 @@ const Header: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className={`header ${theme}`}>
+    <header className={`header fixed-header ${theme}`}>
       <div className="header-content">
         <Link to="/" className="logo">
           <img src={moi} alt="Jehan Logo" className="logo-image" />

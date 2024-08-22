@@ -1,8 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useTheme } from '../ThemeContext';
-import SEO from '../components/SEO';
-import SkillBar from '../components/SkillBarProps';
+import { useTheme } from '../../ThemeContext';
+import SEO from '../../components/SEO';
 import '../styles/global.css';
 
 const Skills: React.FC = () => {

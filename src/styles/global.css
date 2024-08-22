@@ -1,5 +1,6 @@
 :root {
   --text: #0b1114;
+  --header-background: #ffffff;
   --background: #f5f9fa;
   --primary: #45b0d3;
   --secondary: #76d1ef;
@@ -15,6 +16,7 @@
 [data-theme='dark'] {
   --text: #ebf1f4;
   --background: #05090a;
+  --header-background: #0f1a1d;
   --primary: #2c96ba;
   --secondary: #106b89;
   --accent: #038cba;
@@ -31,7 +33,7 @@ body {
 }
 
 .header {
-  background-color: var(--background);
+  background-color: var(--header-background);
   color: var(--text);
   position: fixed;
   top: 0;
@@ -65,7 +67,7 @@ body {
   padding: 0.6em 2em;
   border: none;
   outline: none;
-  color: var(--background);
+  color: var(--header-background);
   background: var(--primary);
   cursor: pointer;
   position: relative;
@@ -548,7 +550,7 @@ body {
 
 /* Footer styles */
 .footer {
-  background-color: var(--background);
+  background-color: var(--header-background);
   color: var(--text);
   padding: 2rem 0;
 }
@@ -729,4 +731,16 @@ input:checked + .slider .moon {
   display: block;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.main-content {
+  padding-top: 80px; /* Adjust this value based on your header height */
 }

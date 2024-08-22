@@ -1,9 +1,10 @@
 import React from 'react';
-import SEO from '../components/SEO';
+import SEO from '../../components/SEO';
 import { motion } from 'framer-motion';
-import ProjectCard from '../components/ProjectCard';
-import SkillBar from '../components/SkillBarProps';
-import { useTheme } from '../ThemeContext';
+import ProjectCard from '../../components/ProjectCard';
+import SkillBar from '../../components/SkillBarProps';
+import { useTheme } from '../../ThemeContext';
+import moi from '../../assets/jehan.png';
 import '../styles/global.css';
 
 const Home: React.FC = () => {
@@ -33,7 +34,7 @@ const Home: React.FC = () => {
         </section>
 
         <section className="about">
-          <img src="../assets/jehan.png" alt="Your Name" className="profile-pic" />
+          <img src={moi} alt="Your Name" className="profile-pic" />
           <p>Brief introduction about yourself and your passion for web development.</p>
         </section>
 
