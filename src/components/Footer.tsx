@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <h3>Quick Links</h3>
-          <ul>
+          <ul className="horizontal-list">
             <li><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/projects">Projects</a></li>

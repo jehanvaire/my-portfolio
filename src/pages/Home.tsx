@@ -33,7 +33,7 @@ const Home: React.FC = () => {
         </section>
 
         <section className="about">
-          <img src="/path-to-your-photo.jpg" alt="Your Name" className="profile-pic" />
+          <img src="../assets/jehan.png" alt="Your Name" className="profile-pic" />
           <p>Brief introduction about yourself and your passion for web development.</p>
         </section>
 
