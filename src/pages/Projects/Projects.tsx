@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../../ThemeContext';
-import SEO from '../../components/SEO';
+import SEO from '../../components/common/SEO';
 import '../../styles/global.css';
+import './Projects.css';
 
 const projectsData = [
   {

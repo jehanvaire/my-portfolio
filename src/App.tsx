@@ -1,14 +1,14 @@
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
 import { ThemeProvider } from "./ThemeContext";
 
-const Home = lazy(() => import("./pages/Home"));
-const About = lazy(() => import("./pages/About"));
-const Projects = lazy(() => import("./pages/Projects"));
-const Skills = lazy(() => import("./pages/Skills"));
-const Contact = lazy(() => import("./pages/Contact"));
+const Home = lazy(() => import("./pages/Home/Home"));
+const About = lazy(() => import("./pages/About/About"));
+const Projects = lazy(() => import("./pages/Projects/Projects"));
+const Skills = lazy(() => import("./pages/Skills/Skills"));
+const Contact = lazy(() => import("./pages/Contact/Contact"));
 
 function App() {
   return (

@@ -1,18 +1,19 @@
 import React from 'react';
-import SEO from '../../components/SEO';
+import SEO from '../../components/common/SEO';
 import { motion } from 'framer-motion';
-import ProjectCard from '../../components/ProjectCard';
-import SkillBar from '../../components/SkillBarProps';
+import ProjectCard from '../../components/home/ProjectCard';
+import SkillBar from '../../components/skills/SkillBarProps';
 import { useTheme } from '../../ThemeContext';
 import moi from '../../assets/jehan.png';
-import '../styles/global.css';
+import '../../styles/global.css';
+import './Home.css';
 
 const Home: React.FC = () => {
   const { theme } = useTheme();
   return (
     <div className={`home-container ${theme}`}>
       <SEO 
-        title="Your Name - Web Developer Portfolio"
+        title="Adrien BONY - Web Developer Portfolio"
         description="Welcome to my portfolio showcasing my web development projects and skills."
         keywords="web developer, react, typescript, portfolio"
       />
@@ -22,20 +23,22 @@ const Home: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Hi, I'm Your Name
+            Hi, I'm Adrien
           </motion.h1>
           <motion.h2
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Web Developer & Designer
+            Full Stack Developer
           </motion.h2>
         </section>
 
         <section className="about">
           <img src={moi} alt="Your Name" className="profile-pic" />
-          <p>Brief introduction about yourself and your passion for web development.</p>
+          <p>
+            I'm a full stack developer with a passion for creating web applications. I'm currently working at <a href="https://www.infotel.com" target="_blank" rel="noopener noreferrer">Infotel</a> as a full stack developer.
+          </p>
         </section>
 
         <section className="projects">

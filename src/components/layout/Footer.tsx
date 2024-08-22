@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useTheme } from '../ThemeContext';
+import { useTheme } from '../../ThemeContext';
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import './layout.css';
 
 const Footer: React.FC = () => {
   const { theme } = useTheme();

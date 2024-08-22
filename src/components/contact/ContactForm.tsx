@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './contact.css';
 
 const ContactForm: React.FC = () => {
   const [status, setStatus] = useState<string>('');
@@ -24,14 +25,15 @@ const ContactForm: React.FC = () => {
 
   return (
     <form
+      className="contact-form"
       onSubmit={submitForm}
       action="https://formspree.io/f/your-form-id"
       method="POST"
     >
       <input type="email" name="email" placeholder="Your email" required />
       <textarea name="message" placeholder="Your message" required></textarea>
-      {status === "SUCCESS" ? <p>Thanks!</p> : <button>Submit</button>}
-      {status === "ERROR" && <p>Oops! There was an error.</p>}
+      {status === "SUCCESS" ? <p className="success">Thanks!</p> : <button>Submit</button>}
+      {status === "ERROR" && <p className="error">Oops! There was an error.</p>}
     </form>
   );
 }

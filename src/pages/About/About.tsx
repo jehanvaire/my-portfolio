@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../../ThemeContext';
-import SEO from '../../components/SEO';
+import SEO from '../../components/common/SEO';
 import moi from '../../assets/jehan.png';
-import '../styles/global.css';
+import '../../styles/global.css';
+import './About.css';
 
 const About: React.FC = () => {
   const { theme } = useTheme();
@@ -11,8 +12,8 @@ const About: React.FC = () => {
   return (
     <div className={`about-page ${theme}`}>
       <SEO 
-        title="About Me - Your Name"
-        description="Learn more about Your Name, a passionate web developer and designer."
+        title="About Me - Adrien BONY"
+        description="Learn more about me, a passionate web developer"
         keywords="about, web developer, designer, skills, experience"
       />
       <motion.div
@@ -25,20 +26,20 @@ const About: React.FC = () => {
         <div className="about-grid">
           <motion.img
             src={moi}
-            alt="Your Name"
+            alt="Adrien BONY"
             className="profile-pic"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           />
           <div className="about-text">
             <p>
-              Hello! I'm [Your Name], a passionate web developer and designer with a keen eye for creating beautiful, functional, and user-friendly websites.
+              Hello! I'm Adrien, a passionate web developer with a keen eye for creating beautiful, functional, and user-friendly websites.
             </p>
             <p>
-              With [X] years of experience in the field, I've had the opportunity to work on a wide range of projects, from small business websites to large-scale web applications. My expertise lies in front-end development, with a strong focus on React and TypeScript.
+              With 3 years of experience in the field, I've had the opportunity to work on a wide range of projects, from small business websites to large-scale web applications. My expertise lies in full stack development.
             </p>
             <p>
-              When I'm not coding, you can find me [mention some hobbies or interests]. I believe that a well-rounded life contributes to creative problem-solving in my work.
+              When I'm not coding, you can find me at the gym. I believe that a well-rounded life contributes to creative problem-solving in my work.
             </p>
           </div>
         </div>
@@ -76,6 +77,7 @@ const About: React.FC = () => {
             className="cta-button"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => window.location.href = '/contact'}
           >
             Contact Me
           </motion.button>

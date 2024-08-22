@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useTheme } from "../ThemeContext";
-import "../styles/global.css";
-import moi from "../assets/jehan.png";
+import { useTheme } from "../../ThemeContext";
+import moi from "../../assets/jehan.png";
+import "./layout.css";
 
 const Header: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
