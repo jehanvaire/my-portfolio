@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../../ThemeContext';
 import SEO from '../../components/common/SEO';
+import SkillChart from '../../components/skills/SkillChart';
 import '../../styles/global.css';
 import './Skills.css';
 
@@ -11,19 +12,42 @@ const Skills: React.FC = () => {
   const skillCategories = [
     {
       title: "Langages de programmation",
-      skills: ["C#", "Java", "Python", "HTML/CSS", "JS/TS"]
+      skills: [
+        { name: "C#", level: 75 },
+        { name: "Java", level: 70 },
+        { name: "Python", level: 60 },
+        { name: "HTML/CSS", level: 95 },
+        { name: "JS/TS", level: 90 }
+      ]
     },
     {
       title: "Outils de développement",
-      skills: ["Angular", "React", "React Native", "Vue JS", "Dot Net", "Spring Boot"]
+      skills: [
+        { name: "Angular", level: 90 },
+        { name: "React", level: 85 },
+        { name: "React Native", level: 80 },
+        { name: "Vue JS", level: 65 },
+        { name: "Dot Net", level: 75 },
+        { name: "Spring Boot", level: 75 }
+      ]
     },
     {
       title: "Bases de données",
-      skills: ["SQL", "PLSQL", "PostgreSQL", "MongoDB"]
+      skills: [
+        { name: "SQL", level: 90 },
+        { name: "PLSQL", level: 60 },
+        { name: "PostgreSQL", level: 95 },
+        { name: "MongoDB", level: 70 }
+      ]
     },
     {
       title: "Suite Office",
-      skills: ["Word", "Excel", "PowerPoint", "Canva"]
+      skills: [
+        { name: "Word", level: 95 },
+        { name: "Excel", level: 90 },
+        { name: "PowerPoint", level: 95 },
+        { name: "Canva", level: 85 }
+      ]
     }
   ];
 
@@ -49,20 +73,7 @@ const Skills: React.FC = () => {
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
             <h2>{category.title}</h2>
-            <div className="skills-grid">
-              {category.skills.map((skill, skillIndex) => (
-                <motion.div
-                  key={skill}
-                  className="skill-badge"
-                  whileHover={{ scale: 1.05 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.2, delay: skillIndex * 0.05 }}
-                >
-                  {skill}
-                </motion.div>
-              ))}
-            </div>
+            <SkillChart skills={category.skills} />
           </motion.div>
         ))}
       </motion.div>

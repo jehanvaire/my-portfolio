@@ -22,7 +22,7 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Handle form submission logic here
-    console.log(formData);
+    console.log(formData); // Replace with your API call
   };
 
   return (
