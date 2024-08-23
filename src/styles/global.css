@@ -6,6 +6,7 @@
   --secondary: #76d1ef;
   --accent: #45cefc;
   --transition: all 0.3s ease;
+  --shadow-color: rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -21,6 +22,7 @@
   --primary: #2c96ba;
   --secondary: #106b89;
   --accent: #038cba;
+  --shadow-color: rgba(255, 255, 255, 0.2);
 }
 
 body {
@@ -54,8 +56,7 @@ body {
 .home-container,
 .about-page,
 .projects-page,
-.skills-page,
-.project-card {
+.skills-page {
   background-color: var(--background);
   color: var(--text);
 }

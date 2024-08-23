@@ -13,40 +13,41 @@ const Skills: React.FC = () => {
     {
       title: "Langages de programmation",
       skills: [
-        { name: "C#", level: 75 },
+        { name: "C/C++", level: 55 },
+        { name: "Python", level: 65 },
         { name: "Java", level: 70 },
-        { name: "Python", level: 60 },
+        { name: "C#", level: 75 },
+        { name: "JS/TS", level: 90 },
         { name: "HTML/CSS", level: 95 },
-        { name: "JS/TS", level: 90 }
       ]
     },
     {
       title: "Outils de développement",
       skills: [
-        { name: "Angular", level: 90 },
-        { name: "React", level: 85 },
-        { name: "React Native", level: 80 },
         { name: "Vue JS", level: 65 },
         { name: "Dot Net", level: 75 },
-        { name: "Spring Boot", level: 75 }
+        { name: "Spring Boot", level: 75 },
+        { name: "React Native", level: 80 },
+        { name: "React", level: 85 },
+        { name: "Angular", level: 90 },
       ]
     },
     {
       title: "Bases de données",
       skills: [
+        { name: "PLSQL", level: 50 },
+        { name: "MongoDB", level: 70 },
         { name: "SQL", level: 90 },
-        { name: "PLSQL", level: 60 },
         { name: "PostgreSQL", level: 95 },
-        { name: "MongoDB", level: 70 }
       ]
     },
     {
       title: "Suite Office",
       skills: [
-        { name: "Word", level: 95 },
+        { name: "Canva", level: 85 },
         { name: "Excel", level: 90 },
         { name: "PowerPoint", level: 95 },
-        { name: "Canva", level: 85 }
+        { name: "Word", level: 95 },
       ]
     }
   ];
