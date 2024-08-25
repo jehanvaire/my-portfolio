@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  my-portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: my-portfolio
+    ports:
+      - "80:80"
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+    environment:
+      - NODE_ENV=development
+    restart: unless-stopped
+
+volumes:
+  node_modules:
