@@ -2,7 +2,7 @@ import React from 'react';
 import SEO from '../../components/common/SEO';
 import { motion } from 'framer-motion';
 import ProjectCard from '../../components/home/ProjectCard';
-import SkillBar from '../../components/skills/SkillBarProps';
+import SkillFishes from '../../components/skills/SkillFishes';
 import { useTheme } from '../../ThemeContext';
 import moi from '../../assets/jehan.png';
 import '../../styles/global.css';
@@ -10,6 +10,7 @@ import './Home.css';
 import sudoku from '../../assets/sudoku.jpg';
 import event from '../../assets/events.jpg';
 import social from '../../assets/social-media.png';
+
 
 const Home: React.FC = () => {
   const { theme } = useTheme();
@@ -68,10 +69,27 @@ const Home: React.FC = () => {
         </section>
 
         <section className="skills">
-          <h2>My Skills</h2>
-          <SkillBar skill="React" percentage={90} />
-          <SkillBar skill="TypeScript" percentage={85} />
-          <SkillBar skill="CSS" percentage={80} />
+          <h2>My Skills (work in progress)</h2>
+          <SkillFishes 
+          // skills={[
+          //   "React",
+          //   "TypeScript",
+          //   "HTML/CSS",
+          //   "Node.js",
+          //   "Git",
+            // "MongoDB",
+            // "PostgreSQL",
+            // "Python",
+            // "REST API",
+            // "MVC",
+            // "Web Development",
+            // "React Native",
+            // "C/C++",
+            // "Java",
+            // "C#",
+            // "JS/TS",
+          // ]} 
+          />
         </section>
 
         <section className="cta">

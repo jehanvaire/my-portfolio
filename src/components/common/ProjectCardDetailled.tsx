@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useTheme } from '../../ThemeContext';
-import Modal from './ModalProps';
+import Modal from './Modal';
 
 interface ProjectCardDetailedProps {
   title: string;

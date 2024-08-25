@@ -52,15 +52,16 @@ const SkillChart: React.FC<SkillChartProps> = ({ skills }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            style={{ minHeight: '200px', width: '60px' }}
           >
+            <div className="skill-info vertical">
+              <span>{skill.name}</span>
+            </div>
             <div className="skill-progress vertical">
               <motion.div
                 className="skill-progress-bar vertical"
                 initial={{ height: 0 }}
                 animate={{ height: `${skill.level}%` }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                style={{ alignSelf: 'flex-end', position: 'relative' }}
               >
                 {showBubbles && createBubbles(10)}
                 <motion.div
@@ -69,12 +70,9 @@ const SkillChart: React.FC<SkillChartProps> = ({ skills }) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 2, delay: index * 0.1 + 0.5 }}
                 >
-                  {skill.level}
+                  {skill.level}%
                 </motion.div>
               </motion.div>
-            </div>
-            <div className="skill-info vertical">
-              <span>{skill.name}</span>
             </div>
           </motion.div>
         ))}

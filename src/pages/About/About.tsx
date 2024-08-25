@@ -54,7 +54,7 @@ const About: React.FC = () => {
         >
           <h2>My Skills</h2>
           <div className="skills-grid">
-            {['React', 'TypeScript', 'CSS', 'HTML', 'Node.js', 'Git'].map((skill, index) => (
+            {['React', 'Angular', 'TypeScript', 'C#', 'Java', 'Git'].map((skill, index) => (
               <motion.div
                 key={skill}
                 className="skill-badge"

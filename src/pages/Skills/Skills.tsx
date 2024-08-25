@@ -11,7 +11,7 @@ const Skills: React.FC = () => {
 
   const skillCategories = [
     {
-      title: "Langages de programmation",
+      title: "Programming Languages",
       skills: [
         { name: "C/C++", level: 55 },
         { name: "Python", level: 65 },
@@ -22,7 +22,7 @@ const Skills: React.FC = () => {
       ]
     },
     {
-      title: "Outils de développement",
+      title: "Tools",
       skills: [
         { name: "Vue JS", level: 65 },
         { name: "Dot Net", level: 75 },
@@ -33,7 +33,7 @@ const Skills: React.FC = () => {
       ]
     },
     {
-      title: "Bases de données",
+      title: "Databases",
       skills: [
         { name: "PLSQL", level: 50 },
         { name: "MongoDB", level: 70 },
@@ -42,7 +42,7 @@ const Skills: React.FC = () => {
       ]
     },
     {
-      title: "Suite Office",
+      title: "Office Suite",
       skills: [
         { name: "Canva", level: 85 },
         { name: "Excel", level: 90 },

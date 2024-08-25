@@ -23,9 +23,9 @@
 
 .skill-chart-container {
   position: relative;
-  height: 250px;
+  height: 300px; /* Increased height to accommodate skill names */
   margin: 2rem 0;
-  overflow: hidden;
+  overflow: visible; /* Changed from hidden to visible */
   z-index: 1; /* Added a low z-index */
 }
 
@@ -37,7 +37,7 @@
   display: flex;
   justify-content: center;
   gap: 3rem;
-  padding-top: 20px;
+  padding-top: 40px;
 }
 
 .skills-content h2 {
@@ -47,17 +47,50 @@
 
 .skill-bar.vertical {
   display: flex;
-  flex-direction: column-reverse;
-  justify-content: flex-start;
-  height: 180px;
+  flex-direction: column;
+  height: 200px;
+  width: 60px;
+  position: relative;
+}
+
+.skill-info.vertical {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 3;
+  width: 100px;
+}
+
+.skill-info.vertical span {
+  font-size: 12px;
+  color: var(--text);
+  white-space: nowrap;
+  display: inline-block;
+  width: 100%;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .skill-progress.vertical {
-  width: 60px;
-  height: 100%;
+  width: 100%;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  margin-top: 0;
 }
 
 .skill-progress-bar.vertical {
@@ -65,11 +98,10 @@
   transition: height 0.5s ease-out;
   position: relative;
   overflow: hidden;
-  min-height: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
 }
 
 .bubble {
@@ -111,4 +143,64 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+}
+
+/* Aquarium styles */
+.aquarium {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #87CEEB, #1E90FF);
+  transition: background 0.3s ease;
+}
+
+[data-theme="dark"] .aquarium {
+  background: linear-gradient(to bottom, #1a3a4a, #0c2a3a);
+}
+
+.bubble-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 0.8;
+  transition: background 0.3s ease;
+}
+
+[data-theme="dark"] .bubble {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+
+.aquarium-ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20%;
+  background-color: #d4ba6c;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+[data-theme="dark"] .aquarium-ground {
+  background-color: #8a7642;
 }
