@@ -7,13 +7,12 @@ services:
       dockerfile: Dockerfile
     container_name: my-portfolio
     ports:
-      - "80:80"
+      - "82:82"
     volumes:
       - ./src:/app/src
       - ./public:/app/public
-    environment:
-      - NODE_ENV=development
     restart: unless-stopped
+    command: ["nginx", "-g", "daemon off;"]
 
 volumes:
   node_modules:
