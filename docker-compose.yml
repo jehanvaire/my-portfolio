@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: my-portfolio
     ports:
-      - "82:82"
+      - "82:80"
     volumes:
       - ./src:/app/src
       - ./public:/app/public
