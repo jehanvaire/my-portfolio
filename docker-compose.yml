@@ -1,11 +1,8 @@
-version: '3.8'
-
 services:
   my-portfolio:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: my-portfolio
     ports:
       - "82:80"
     volumes:
@@ -13,6 +10,13 @@ services:
       - ./public:/app/public
     restart: unless-stopped
     command: ["nginx", "-g", "daemon off;"]
+    networks:
+      - proxy
 
 volumes:
   node_modules:
+
+networks:
+  proxy:
+    name: proxy_network
+    external: true
