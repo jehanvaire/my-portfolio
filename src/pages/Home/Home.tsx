@@ -88,7 +88,7 @@ const Home: React.FC = () => {
         </section>
 
         <section className="skills">
-          <h2>My Skills (work in progress)</h2>
+          <h2>My Skills</h2>
           <SkillFishes skills={skills} />
         </section>
 
