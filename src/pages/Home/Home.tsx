@@ -14,6 +14,25 @@ import social from '../../assets/social-media.png';
 
 const Home: React.FC = () => {
   const { theme } = useTheme();
+  
+  const skills = [
+    "React",
+    "TypeScript",
+    "HTML/CSS",
+    "Node.js",
+    "Git",
+    "MongoDB",
+    "PostgreSQL",
+    "Python",
+    "REST API",
+    "MVC",
+    "React Native",
+    "C/C++",
+    "Java",
+    "C#",
+    "JS/TS",
+  ];
+
   return (
     <div className={`home-container ${theme}`}>
       <SEO 
@@ -70,26 +89,7 @@ const Home: React.FC = () => {
 
         <section className="skills">
           <h2>My Skills (work in progress)</h2>
-          <SkillFishes 
-          // skills={[
-          //   "React",
-          //   "TypeScript",
-          //   "HTML/CSS",
-          //   "Node.js",
-          //   "Git",
-            // "MongoDB",
-            // "PostgreSQL",
-            // "Python",
-            // "REST API",
-            // "MVC",
-            // "Web Development",
-            // "React Native",
-            // "C/C++",
-            // "Java",
-            // "C#",
-            // "JS/TS",
-          // ]} 
-          />
+          <SkillFishes skills={skills} />
         </section>
 
         <section className="cta">

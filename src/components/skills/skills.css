@@ -95,61 +95,17 @@
 
 .skill-progress-bar.vertical {
   width: 100%;
-  transition: height 0.5s ease-out;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.bubble {
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  aspect-ratio: 1 / 1;
-  animation: bubbleRise 4s ease-in forwards;
-  opacity: 0;
-}
-
-@keyframes bubbleRise {
-  0% {
-    bottom: -20px;
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  100% {
-    bottom: 120%;
-    opacity: 0;
-  }
-}
-
-.skill-percentage {
-  color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  width: 100%;
-  text-align: center;
-  margin-bottom: auto;
-  margin-top: 10px;
-}
-
-.skill-progress-bar.vertical {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
-/* Aquarium styles */
+/* Aquarium Styles */
 .aquarium {
   position: relative;
   width: 100%;
-  height: 50vh;
+  height: 60vh; /* Ensures sufficient height for visibility */
   overflow: hidden;
   background: linear-gradient(to bottom, #87CEEB, #1E90FF);
   transition: background 0.3s ease;
@@ -159,6 +115,7 @@
   background: linear-gradient(to bottom, #1a3a4a, #0c2a3a);
 }
 
+/* Bubbles Styles */
 .bubble-container {
   position: absolute;
   width: 100%;
@@ -180,16 +137,17 @@
 }
 
 @keyframes rise {
-  0% {
+  from {
     transform: translateY(0);
     opacity: 0.8;
   }
-  100% {
+  to {
     transform: translateY(-100vh);
     opacity: 0;
   }
 }
 
+/* Aquarium Ground */
 .aquarium-ground {
   position: absolute;
   bottom: 0;
@@ -203,4 +161,58 @@
 
 [data-theme="dark"] .aquarium-ground {
   background-color: #8a7642;
+}
+
+/* Fish Container */
+.fish-container {
+  position: absolute;
+  width: 100%;
+  height: 80%; /* Adjusted to prevent spawning below ground */
+  pointer-events: none;
+}
+
+/* Fish Styles */
+.fish {
+  position: absolute; /* Changed to absolute for precise positioning */
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Increased gap for larger fish and text */
+}
+
+.fish-mirror .fish-svg {
+  transform: scaleX(-1); /* Flip the SVG horizontally */
+}
+
+/* Shark SVG Styles */
+.fish-svg {
+  width: 150px; /* Increased from 100px to 150px */
+  height: auto;
+  transition: transform 0.5s;
+}
+
+.skill-text {
+  /* Ensure text is visible and positioned correctly */
+  position: absolute;
+  top: 54%; /* Moved down from 50% to 60% */
+  left: 55%; /* Moved right from 50% to 60% */
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .aquarium {
+    height: 40vh;
+  }
+
+  .fish-svg {
+    width: 90px; /* Increased from 60px to 90px for mobile */
+  }
+
+  .skill-text {
+    font-size: 1rem; /* Increased from 0.8rem to 1rem for mobile */
+    padding: 8px 12px;
+  }
 }
