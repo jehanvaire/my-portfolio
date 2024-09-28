@@ -1,5 +1,5 @@
 # Use an official Node runtime as the base image
-FROM node:14-alpine as build
+FROM node:14-alpine
 
 # Set the working directory in the container
 WORKDIR /app
@@ -16,17 +16,11 @@ COPY . .
 # Build the React app
 RUN npm run build
 
-# Use Nginx to serve the static files
-FROM nginx:alpine
+# Install serve to run the application
+RUN npm install -g serve
 
-# Copy the build output to replace the default nginx contents.
-COPY --from=build /app/build /usr/share/nginx/html
+# Expose port 3000
+EXPOSE 3000
 
-# Copy the custom nginx configuration
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-# Expose port 80
-EXPOSE 80
-
-# Start Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Start the application using serve
+CMD ["serve", "-s", "build", "-l", "3000"]

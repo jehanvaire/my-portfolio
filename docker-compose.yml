@@ -4,19 +4,21 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "82:80"
+      - "3000:3000"
     volumes:
       - ./src:/app/src
       - ./public:/app/public
+      - node_modules:/app/node_modules
     restart: unless-stopped
-    command: ["nginx", "-g", "daemon off;"]
     networks:
       - proxy
+    labels:
+      - traefik.http.routers.my-portfolio.rule=Host(`adrien-bony.fr`)
+      - "traefik.http.routers.my-portfolio.tls.certresolver=myresolver"
 
 volumes:
   node_modules:
 
 networks:
   proxy:
-    name: proxy_network
     external: true
