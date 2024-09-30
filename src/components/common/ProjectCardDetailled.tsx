@@ -24,7 +24,9 @@ const ProjectCardDetailed: React.FC<ProjectCardDetailedProps> = ({
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    const newShadowColor = theme === 'dark' ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)';
+    const newShadowColor = theme === 'dark' 
+      ? 'rgba(255, 255, 255, 0.2)' 
+      : 'rgba(0, 0, 0, 0.2)';
     setShadowColor(newShadowColor);
     controls.start({ boxShadow: `0px 5px 15px ${newShadowColor}` });
   }, [theme, controls]);
@@ -37,9 +39,8 @@ const ProjectCardDetailed: React.FC<ProjectCardDetailedProps> = ({
     <>
       <motion.div
         className={`project-card ${theme}`}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0, boxShadow: `0px 5px 15px ${shadowColor}` }}
-        transition={{ duration: 0.5 }}
+        animate={controls}
+        initial={false} // Prevent initial animation
         whileHover={{
           scale: 1.05,
           boxShadow: `0px 10px 30px ${shadowColor}`,

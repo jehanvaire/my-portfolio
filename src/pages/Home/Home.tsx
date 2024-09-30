@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import SEO from '../../components/common/SEO';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import ProjectCard from '../../components/home/ProjectCard';
 import SkillFishes from '../../components/skills/SkillFishes';
 import { useTheme } from '../../ThemeContext';
@@ -11,10 +11,10 @@ import sudoku from '../../assets/sudoku.jpg';
 import event from '../../assets/events.jpg';
 import social from '../../assets/social-media.png';
 
-
 const Home: React.FC = () => {
   const { theme } = useTheme();
-  
+  const controls = useAnimation();
+
   const skills = [
     "React",
     "TypeScript",
@@ -33,69 +33,102 @@ const Home: React.FC = () => {
     "JS/TS",
   ];
 
+  useEffect(() => {
+    const startAnimation = async () => {
+      try {
+        await controls.start({
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.5 },
+        });
+      } catch (error) {
+      }
+    };
+    startAnimation();
+  }, [controls]);
+
+  const projects = [
+    {
+      title: 'Sudoku Solver',
+      description: 'An efficient Sudoku solving application.',
+      imageUrl: sudoku,
+    },
+    {
+      title: 'Event Management',
+      description: 'A platform to manage and organize events.',
+      imageUrl: event,
+    },
+    {
+      title: 'Social Media App',
+      description: 'A mobile app for connecting with friends.',
+      imageUrl: social,
+    },
+  ];
+
   return (
     <div className={`home-container ${theme}`}>
       <SEO 
-        title="Adrien BONY - Web Developer Portfolio"
-        description="Welcome to my portfolio showcasing my web development projects and skills."
-        keywords="web developer, react, typescript, portfolio"
+        title="Home - Adrien BONY"
+        description="Welcome to my portfolio website."
+        keywords="home, portfolio, web developer"
       />
-        <section className="hero">
-          <motion.h1
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Hi, I'm Adrien
-          </motion.h1>
-          <motion.h2
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            Full Stack Developer
-          </motion.h2>
-        </section>
-
-        <section className="about">
-          <div className="profile-pic-container">
-            <img src={moi} alt="Adrien BONY" className="profile-pic" />
-          </div>
+      <motion.div
+        className="hero"
+        initial={{ opacity: 0, y: 20 }}
+        animate={controls}
+      >
+        <h1>Welcome to My Portfolio</h1>
+        <h2>I'm Adrien, a Web Developer</h2>
+      </motion.div>
+      <div className="about">
+        <motion.div
+          className="profile-pic-container"
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.2 }}
+        >
+          <img src={moi} alt="Adrien BONY" className="profile-pic" />
+        </motion.div>
+        <div className="about-text">
           <p>
-            I'm a full stack developer with a passion for creating web applications. I'm currently working at <a href="https://www.infotel.com" target="_blank" rel="noopener noreferrer">Infotel</a> as a full stack developer.
+            Hello! I'm Adrien, a passionate web developer with a keen eye for creating beautiful, functional, and user-friendly websites.
           </p>
-        </section>
-
-        <section className="projects">
-          <h2>Featured Projects</h2>
-          <div className="project-grid">
-            <ProjectCard 
-              title="Sudoku Solver from Image" 
-              description="A Python project that solves Sudoku puzzles from images. Includes a Flutter mobile app and a Flask API. Uses OpenCV and TensorFlow." 
-              imageUrl={sudoku} 
+          <p>
+            With 3 years of experience in the field, I've worked on a wide range of projects, from small business websites to large-scale web applications.
+          </p>
+          <p>
+            When I'm not coding, you can find me at the gym. I believe that a well-rounded life contributes to creative problem-solving in my work.
+          </p>
+        </div>
+      </div>
+      <section className="projects">
+        <h2>My Projects</h2>
+        <div className="project-grid">
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.title}
+              title={project.title}
+              description={project.description}
+              imageUrl={project.imageUrl}
             />
-            <ProjectCard 
-              title="Event Management Website" 
-              description="A web-based event management system using Google Maps API. Built with HTML/CSS/JavaScript and connected to Firebase. Includes an Android companion app." 
-              imageUrl={event} 
-            />
-            <ProjectCard 
-              title="Social Network Mobile App" 
-              description="A mobile application combining features of LinkedIn and Instagram. Built with React Native, uses REST API, and follows MVC architecture. Includes a web application counterpart." 
-              imageUrl={social} 
-            />
-          </div>
-        </section>
-
-        <section className="skills">
-          <h2>My Skills</h2>
-          <SkillFishes skills={skills} />
-        </section>
-
-        <section className="cta">
-          <h2>Let's Work Together</h2>
-          <button className="cta-button">Contact Me</button>
-        </section>
+          ))}
+        </div>
+      </section>
+      <section className="skills">
+        <h2>My Skills</h2>
+        <SkillFishes 
+          skills={skills}
+        />
+      </section>
+      <section className="cta">
+        <motion.button
+          className="cta-button"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => window.location.href = '/contact'}
+        >
+          Contact Me
+        </motion.button>
+      </section>
     </div>
   );
 };

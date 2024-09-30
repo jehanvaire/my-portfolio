@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTheme } from '../../ThemeContext';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import './layout.css';
+import '../../styles/layout.css';
 
 const Footer: React.FC = () => {
   const { theme } = useTheme();

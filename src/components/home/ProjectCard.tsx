@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from '../../ThemeContext';
-import './home.css';
+import '../../styles/home.css';
 
 interface ProjectCardProps {
   title: string;
@@ -23,8 +23,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   useEffect(() => {
     const newShadowColor = theme === 'dark' ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)';
     setShadowColor(newShadowColor);
-    controls.start({ boxShadow: `0px 5px 15px ${newShadowColor}` });
-  }, [theme, controls]);
+    const startAnimation = async () => {
+      try {
+        await controls.start({ boxShadow: `0px 5px 15px ${newShadowColor}` });
+      } catch (error) {
+        console.error(`Animation error for ${title}:`, error);
+      }
+    };
+    startAnimation();
+  }, [theme, controls, title]);
 
   const handleLearnMore = () => {
     navigate('/projects');
@@ -33,8 +40,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <motion.div
       className="project-card"
-      initial={{ boxShadow: `0px 5px 15px ${shadowColor}` }}
       animate={controls}
+      initial={false} // Prevent Framer Motion from setting initial styles
       whileHover={{
         scale: 1.05,
         boxShadow: `0px 10px 30px ${shadowColor}`,

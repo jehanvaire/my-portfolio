@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useTheme } from "../../ThemeContext";
 import moi from "../../assets/jehan.png";
-import "./layout.css";
+import '../../styles/layout.css';
+
 
 const Header: React.FC = () => {
   const { theme, toggleTheme } = useTheme();

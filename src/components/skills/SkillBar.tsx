@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './skills.css';
+import '../../styles/skills.css';
+
 
 interface SkillBarProps {
   skill: string;

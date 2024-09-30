@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../../ThemeContext';
-import './common.css';
+import '../../styles/common.css';
 
 interface ModalProps {
   isOpen: boolean;

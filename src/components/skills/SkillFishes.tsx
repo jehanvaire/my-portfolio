@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo } from "react";
-import "./skills.css";
+import '../../styles/skills.css';
 import { motion, useAnimation } from "framer-motion";
 import { ReactComponent as SharkSvg } from '../../assets/shark.svg'; // Import the SVG as a React component
 
@@ -13,116 +13,62 @@ interface SharkProps {
 }
 
 // SVG Shark Component
-const Shark: React.FC<SharkProps> = React.memo(({ skill, initialDirection, topPosition, delay, duration }) => {
-  const [color, setColor] = useState<string>("#ffffff");
-  const [direction, setDirection] = useState<"left" | "right">(initialDirection);
-  const controls = useAnimation();
+const Shark: React.FC<SharkProps> = React.memo(
+  ({ skill, initialDirection, topPosition, delay, duration }) => {
+    const controls = useAnimation();
+    const [direction, setDirection] = useState(initialDirection);
 
-  useEffect(() => {
-    const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')}`;
-    setColor(randomColor);
-  }, []);
+    useEffect(() => {
+      const animate = async () => {
+        try {
+          await controls.start({
+            x: direction === "left" ? "100%" : "-100%",
+            transition: { duration, delay },
+          });
+          setDirection(direction === "left" ? "right" : "left");
+        } catch (error) {
+          console.error(`Animation error for ${skill}:`, error);
+        }
+      };
+      animate();
+    }, [controls, direction, duration, delay, skill]);
 
-  useEffect(() => {
-    const animate = async () => {
-      while (true) {
-        await controls.start({
-          x: direction === "right" ? window.innerWidth - 600 : -50,
-          transition: { duration, ease: "linear" },
-        });
-        setDirection(prev => prev === "right" ? "left" : "right");
-      }
-    };
-    animate();
-  }, [controls, direction, duration]);
-
-  // Function to calculate font size based on skill name length
-  const calculateFontSize = (skillName: string) => {
-    const baseSize = 16; // Base font size in pixels
-    const maxLength = 10; // Maximum length for full size
-    const minSize = 10; // Minimum font size in pixels
-
-    if (skillName.length <= maxLength) {
-      return `${baseSize}px`;
-    } else {
-      const reducedSize = Math.max(baseSize - (skillName.length - maxLength), minSize);
-      return `${reducedSize}px`;
-    }
-  };
-
-  // Function to determine text color based on background brightness
-  const getTextColor = (bgColor: string) => {
-    // Convert hex to RGB
-    const r = parseInt(bgColor.slice(1, 3), 16);
-    const g = parseInt(bgColor.slice(3, 5), 16);
-    const b = parseInt(bgColor.slice(5, 7), 16);
-    
-    // Calculate brightness
-    const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-    
-    // Return black for bright backgrounds, white for dark
-    return brightness > 128 ? '#000000' : '#ffffff';
-  };
-
-  // Memoize the text color calculation
-  const textColor = useMemo(() => getTextColor(color), [color]);
-
-  return (
-    <motion.div
-      className={`fish ${direction === "left" ? "" : "fish-mirror"}`}
-      animate={controls}
-      initial={{ x: direction === "right" ? -50 : window.innerWidth - 500 }}
-      style={{ top: `${topPosition}%` }}
-      aria-label={`Shark representing skill ${skill}`}
-    >
-      <SharkSvg className="fish-svg" style={{ fill: color }} />
-      <span 
-        className="skill-text" 
-        style={{ 
-          fontSize: calculateFontSize(skill),
-          color: textColor
+    return (
+      <motion.div
+        style={{
+          position: "absolute",
+          top: `${topPosition}%`,
+          left: direction === "left" ? "-100px" : "calc(100% + 100px)",
         }}
+        animate={controls}
       >
-        {skill}
-      </span>
-    </motion.div>
-  );
-});
+        <SharkSvg width="100" height="50" />
+        <div className="skill-label">{skill}</div>
+      </motion.div>
+    );
+  }
+);
 
 interface SkillFishesProps {
   skills: string[];
 }
 
 const SkillFishes: React.FC<SkillFishesProps> = ({ skills }) => {
-  const [sharks, setSharks] = useState<SharkProps[]>([]);
-
-  useEffect(() => {
-    // Shuffle skills to randomize the order
-    const shuffledSkills = [...skills].sort(() => Math.random() - 0.5);
-
-    // Initialize sharks with random properties
-    const initialSharks: SharkProps[] = shuffledSkills.slice(0, 10).map((skill) => ({
+  const sharks = useMemo(() => {
+    return skills.map((skill, index) => ({
       skill,
-      initialDirection: Math.random() > 0.5 ? "right" : "left",
-      topPosition: Math.floor(Math.random() * 70),
-      delay: Math.random() * 5, // 0 - 2 seconds
-      duration: Math.random() * 5 + 10, // 10 - 15 seconds
+      initialDirection: index % 2 === 0 ? "left" : "right",
+      topPosition: 10 + (index * 60) / skills.length,
+      delay: Math.random() * 2,
+      duration: 5 + Math.random() * 5,
     }));
-
-    setSharks(initialSharks);
   }, [skills]);
 
   return (
     <div className="aquarium">
-      {/* Bubbles */}
-      <Bubbles />
-      {/* Sharks */}
-      <div className="fish-container">
-        {sharks.map((shark, index) => (
-          <Shark key={`${shark.skill}-${index}`} {...shark} />
-        ))}
-      </div>
-      <div className="aquarium-ground"></div>
+      {sharks.map((shark) => (
+        <Shark key={shark.skill} {...shark} initialDirection={shark.initialDirection as "left" | "right"} />
+      ))}
     </div>
   );
 };
