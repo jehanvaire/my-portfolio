@@ -1,8 +1,8 @@
 .projects-page {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-  min-height: calc(100vh - 4rem - 170px);
+  padding: 1rem;
+  min-height: calc(100vh - 250px);
   display: flex;
   flex-direction: column;
 }
@@ -16,10 +16,9 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
-
 .project-card {
   background-color: var(--background);
   border-radius: 10px;
@@ -35,7 +34,7 @@
 }
 
 .project-info {
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 .project-info h2 {

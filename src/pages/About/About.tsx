@@ -22,10 +22,6 @@ const About: React.FC = () => {
     startAnimation();
   }, [controls]);
 
-  const skills = [
-    "React", "Angular", "TypeScript", "C#", "Java", "Git"
-  ];
-
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 }
@@ -69,21 +65,6 @@ const About: React.FC = () => {
           </motion.div>
         </div>
         <motion.div variants={itemVariants}>
-          <h2>My Skills</h2>
-          <div className="skills-grid">
-            {skills.map((skill) => (
-              <motion.div
-                key={skill}
-                className="skill-badge"
-                whileHover={{ scale: 1.05 }}
-                variants={itemVariants}
-              >
-                {skill}
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-        <motion.div variants={itemVariants}>
           <h2>Let's Connect</h2>
           <p>
             I'm always excited to take on new challenges and collaborate on interesting projects. If you'd like to work together or just have a chat, feel free to reach out!
@@ -97,7 +78,6 @@ const About: React.FC = () => {
             Contact Me
           </motion.button>
         </motion.div>
-        <SkillFishes skills={skills} />
       </motion.div>
     </div>
   );

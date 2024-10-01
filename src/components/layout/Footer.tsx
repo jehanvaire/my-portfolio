@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className={`footer fixed-footer ${theme}`}>
+    <footer className={`footer ${theme}`}>
       <div className="footer-content">
         <div className="footer-left">
           <h2>Adrien Bony</h2>

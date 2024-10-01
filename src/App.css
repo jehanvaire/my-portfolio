@@ -38,5 +38,9 @@
 }
 
 .main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   padding-top: 80px; /* Adjust this value based on your header height */
+  padding-bottom: 2rem; /* Add some bottom padding to prevent content from touching the footer */
 }

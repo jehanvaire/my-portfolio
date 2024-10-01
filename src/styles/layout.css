@@ -141,15 +141,13 @@
 }
 
 /* Footer styles */
-.footer, .header {
+.footer {
   background-color: var(--header-background);
   color: var(--text);
   transition: var(--transition);
-}
-
-.footer {
   padding: 1rem 0;
   font-size: 0.9rem;
+  margin-top: auto;
 }
 
 .footer-content {

@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import SEO from '../../components/common/SEO';
 import { motion, useAnimation } from 'framer-motion';
 import ProjectCard from '../../components/home/ProjectCard';
-import SkillFishes from '../../components/skills/SkillFishes';
 import { useTheme } from '../../ThemeContext';
 import moi from '../../assets/jehan.png';
 import '../../styles/global.css';
@@ -14,24 +13,6 @@ import social from '../../assets/social-media.png';
 const Home: React.FC = () => {
   const { theme } = useTheme();
   const controls = useAnimation();
-
-  const skills = [
-    "React",
-    "TypeScript",
-    "HTML/CSS",
-    "Node.js",
-    "Git",
-    "MongoDB",
-    "PostgreSQL",
-    "Python",
-    "REST API",
-    "MVC",
-    "React Native",
-    "C/C++",
-    "Java",
-    "C#",
-    "JS/TS",
-  ];
 
   useEffect(() => {
     const startAnimation = async () => {
@@ -112,12 +93,6 @@ const Home: React.FC = () => {
             />
           ))}
         </div>
-      </section>
-      <section className="skills">
-        <h2>My Skills</h2>
-        <SkillFishes 
-          skills={skills}
-        />
       </section>
       <section className="cta">
         <motion.button

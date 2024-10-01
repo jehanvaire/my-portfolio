@@ -4,7 +4,7 @@
   padding: 2rem;
   border-radius: 8px;
   transition: var(--transition);
-  min-height: calc(100vh - 4rem - 250px);
+  min-height: calc(100vh - 330px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,17 +35,26 @@
 
 .form-group input,
 .form-group textarea {
+  width: 100%;
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
   transition: var(--transition);
+  background-color: #f0f0f0;
+  color: #0b1114;
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
   border-color: var(--primary);
+  background-color: #e8e8e8;
 }
 
 .submit-btn {
@@ -61,4 +70,17 @@
 
 .submit-btn:hover {
   background-color: var(--accent);
+}
+
+.contact-form p {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.contact-form .success {
+  color: green;
+}
+
+.contact-form .error {
+  color: red;
 }
