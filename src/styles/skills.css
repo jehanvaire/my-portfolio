@@ -1,218 +1,43 @@
-/* SkillBar styles */
-.skill-bar {
+.skill-category {
+  margin-bottom: 2rem;
+}
+
+.skill-category-title {
+  text-align: center;
   margin-bottom: 1rem;
 }
 
-.skill-info {
+.skill-list {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.skill-item {
+  background-color: var(--secondary-bg-color);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  flex: 0 1 calc(25% - 1rem);
+  text-align: center;
+}
+
+.skill-icon {
+  width: 10vw;
+  height: 10vw;
   margin-bottom: 0.5rem;
 }
 
-.skill-progress {
-  background-color: #e0e0e0;
-  border-radius: 10px;
-  height: 10px;
-  overflow: hidden;
-}
-
-.skill-progress-bar {
-  background-color: var(--primary);
-  height: 100%;
-}
-
-.skill-chart-container {
-  position: relative;
-  height: 300px; /* Increased height to accommodate skill names */
-  margin: 2rem 0;
-  overflow: visible; /* Changed from hidden to visible */
-  z-index: 1; /* Added a low z-index */
-}
-
-.skill-chart {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  padding-top: 40px;
-}
-
-.skills-content h2 {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.skill-bar.vertical {
-  display: flex;
-  flex-direction: column;
-  height: 200px;
-  width: 60px;
-  position: relative;
-}
-
-.skill-info.vertical {
-  position: absolute;
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  z-index: 3;
-  width: 100px;
-}
-
-.skill-info.vertical span {
-  font-size: 12px;
-  color: var(--text);
-  white-space: nowrap;
-  display: inline-block;
-  width: 100%;
-  opacity: 0;
-  animation: fadeInUp 0.5s ease forwards;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.skill-progress.vertical {
-  width: 100%;
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  margin-top: 0;
-}
-
-.skill-progress-bar.vertical {
-  width: 100%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-/* Aquarium Styles */
-.aquarium {
-  position: relative;
-  width: 100%;
-  height: 60vh; /* Ensures sufficient height for visibility */
-  overflow: hidden;
-  background: linear-gradient(to bottom, #87CEEB, #1E90FF);
-  transition: background 0.3s ease;
-}
-
-[data-theme="dark"] .aquarium {
-  background: linear-gradient(to bottom, #1a3a4a, #0c2a3a);
-}
-
-/* Bubbles Styles */
-.bubble-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.bubble {
-  position: absolute;
-  bottom: -30px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.7);
-  opacity: 0.8;
-  transition: background 0.3s ease;
-}
-
-[data-theme="dark"] .bubble {
-  background: rgba(255, 255, 255, 0.4);
-}
-
-@keyframes rise {
-  from {
-    transform: translateY(0);
-    opacity: 0.8;
-  }
-  to {
-    transform: translateY(-100vh);
-    opacity: 0;
-  }
-}
-
-/* Aquarium Ground */
-.aquarium-ground {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 20%;
-  background-color: #d4ba6c;
-  overflow: hidden;
-  transition: background-color 0.3s ease;
-}
-
-[data-theme="dark"] .aquarium-ground {
-  background-color: #8a7642;
-}
-
-/* Fish Container */
-.fish-container {
-  position: absolute;
-  width: 100%;
-  height: 80%; /* Adjusted to prevent spawning below ground */
-  pointer-events: none;
-}
-
-/* Fish Styles */
-.fish {
-  position: absolute; /* Changed to absolute for precise positioning */
-  display: flex;
-  align-items: center;
-  gap: 20px; /* Increased gap for larger fish and text */
-}
-
-.fish-mirror .fish-svg {
-  transform: scaleX(-1); /* Flip the SVG horizontally */
-}
-
-/* Shark SVG Styles */
-.fish-svg {
-  width: 150px; /* Increased from 100px to 150px */
-  height: auto;
-  transition: transform 0.5s;
-}
-
-.skill-text {
-  /* Ensure text is visible and positioned correctly */
-  position: absolute;
-  top: 54%; /* Moved down from 50% to 60% */
-  left: 55%; /* Moved right from 50% to 60% */
-  transform: translate(-50%, -50%);
-  text-align: center;
-  width: 100%;
-  font-weight: bold;
-}
-
-/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .aquarium {
-    height: 40vh;
+  .skill-item {
+    flex: 0 1 calc(33.33% - 1rem);
   }
+}
 
-  .fish-svg {
-    width: 90px; /* Increased from 60px to 90px for mobile */
-  }
-
-  .skill-text {
-    font-size: 1rem; /* Increased from 0.8rem to 1rem for mobile */
-    padding: 8px 12px;
+@media (max-width: 480px) {
+  .skill-item {
+    flex: 0 1 calc(50% - 1rem);
   }
 }

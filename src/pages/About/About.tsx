@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useTheme } from '../../ThemeContext';
 import SEO from '../../components/common/SEO';
-import SkillFishes from '../../components/skills/SkillFishes';
 import moi from '../../assets/jehan.png';
 import '../../styles/global.css';
 import './About.css';
