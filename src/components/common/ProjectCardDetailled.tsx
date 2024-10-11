@@ -8,7 +8,7 @@ interface ProjectCardDetailedProps {
   description: string;
   technologies: string[];
   image: string;
-  complementaryText: string;
+  complementaryText?: string;
 }
 
 const ProjectCardDetailed: React.FC<ProjectCardDetailedProps> = ({
@@ -40,7 +40,7 @@ const ProjectCardDetailed: React.FC<ProjectCardDetailedProps> = ({
       <motion.div
         className={`project-card ${theme}`}
         animate={controls}
-        initial={false} // Prevent initial animation
+        initial={false}
         whileHover={{
           scale: 1.05,
           boxShadow: `0px 10px 30px ${shadowColor}`,

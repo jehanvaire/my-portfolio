@@ -68,3 +68,33 @@
 .modal-close:hover {
   background-color: var(--accent);
 }
+
+/* Language switcher styles */
+.language-switcher {
+  position: relative;
+  cursor: pointer;
+}
+
+.current-language,
+.language-button {
+  background-color: var(--primary);
+  color: var(--background);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.language-button {
+  border: none;
+  cursor: pointer;
+}
+
+.language-button:hover {
+  background-color: var(--accent);
+}
+
+.language-list {
+  display: flex;
+  flex-direction: column;
+}
+

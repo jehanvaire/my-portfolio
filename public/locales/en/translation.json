@@ -1,0 +1,66 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "home": {
+    "welcome": "Welcome! 😊",
+    "subtitle": "I'm Adrien, a Web Developer",
+    "about": {
+      "intro": "Hello! I'm Adrien, a passionate developer, specialized in web development.",
+      "experience": "With 3 years of experience in the field, I've worked on a wide range of projects, from small business websites to large-scale web applications.",
+      "personal": "When I'm not coding, you can find me at the gym. I believe that healthy habits contribute to better productivity and more efficient work."
+    },
+    "projects": {
+      "title": "My Projects",
+      "learnMore": "Learn More"
+    },
+    "cta": "Contact Me!"
+  },
+  "about": {
+    "title": "About Me",
+    "connect": "Let's Connect",
+    "cta": "I'm always excited to take on new challenges and collaborate on interesting projects. If you'd like to work together or just have a chat, feel free to reach out!"
+  },
+  "projects": {
+    "title": "My Projects",
+    "sudoku": {
+      "title": "Sudoku Solver from Image",
+      "description": "A Python project that solves Sudoku puzzles from images. Includes a Flutter mobile app and a Flask API. Uses OpenCV and TensorFlow.",
+      "note": "Note: The project is the first AI project I worked on. It might not be very accurate."
+    },
+    "eventManagement": {
+      "title": "Event Management Website",
+      "description": "A web-based event management system using Google Maps API. Built with HTML/CSS/JavaScript and connected to Firebase. Includes an Android companion app.",
+      "note": "Note: This project was the first team project I worked on, it was an excellent stepping stone to introduce me to web development."
+    },
+    "socialNetwork": {
+      "title": "Social Network Mobile App",
+      "description": "A mobile application combining features of LinkedIn and Instagram. Built with React Native, uses REST API, and follows MVC architecture. Includes a web application counterpart."
+    }
+  },
+  "skills": {
+    "title": "My Skills",
+    "categories": {
+      "everyday": "The ones I use everyday at work",
+      "favorite": "The ones I really like",
+      "basics": "The basics"
+    }
+  },
+  "contact": {
+    "title": "Contact Me",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send Message"
+    }
+  },
+  "footer": {
+    "role": "Full Stack Developer",
+    "rights": "All rights reserved."
+  }
+}

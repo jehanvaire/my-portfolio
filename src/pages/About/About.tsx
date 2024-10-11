@@ -5,10 +5,12 @@ import SEO from '../../components/common/SEO';
 import moi from '../../assets/jehan.png';
 import '../../styles/global.css';
 import './About.css';
+import { useTranslation } from 'react-i18next';
 
 const About: React.FC = () => {
   const { theme } = useTheme();
   const controls = useAnimation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const startAnimation = async () => {
@@ -29,8 +31,8 @@ const About: React.FC = () => {
   return (
     <div className={`about-page ${theme}`}>
       <SEO 
-        title="About Me - Adrien BONY"
-        description="Learn more about me, a passionate web developer"
+        title={t('about.title')}
+        description={t('home.about.intro')}
         keywords="about, web developer, designer, skills, experience"
       />
       <motion.div
@@ -38,7 +40,7 @@ const About: React.FC = () => {
         animate={controls}
         className="about-content"
       >
-        <h1>About Me</h1>
+        <h1>{t('about.title')}</h1>
         <div className="about-grid">
           <motion.div
             className="profile-pic-container"
@@ -52,29 +54,21 @@ const About: React.FC = () => {
             />
           </motion.div>
           <motion.div className="about-text" variants={itemVariants}>
-            <p>
-              Hello! I'm Adrien, a passionate web developer with a keen eye for creating beautiful, functional, and user-friendly websites.
-            </p>
-            <p>
-              With 3 years of experience in the field, I've had the opportunity to work on a wide range of projects, from small business websites to large-scale web applications. My expertise lies in full stack development.
-            </p>
-            <p>
-              When I'm not coding, you can find me at the gym. I believe that a well-rounded life contributes to creative problem-solving in my work.
-            </p>
+            <p>{t('home.about.intro')}</p>
+            <p>{t('home.about.experience')}</p>
+            <p>{t('home.about.personal')}</p>
           </motion.div>
         </div>
         <motion.div variants={itemVariants}>
-          <h2>Let's Connect</h2>
-          <p>
-            I'm always excited to take on new challenges and collaborate on interesting projects. If you'd like to work together or just have a chat, feel free to reach out!
-          </p>
+          <h2>{t('about.connect')}</h2>
+          <p>{t('about.cta')}</p>
           <motion.button
             className="cta-button"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => window.location.href = '/contact'}
           >
-            Contact Me
+            {t('home.cta')}
           </motion.button>
         </motion.div>
       </motion.div>

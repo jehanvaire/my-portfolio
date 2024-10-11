@@ -9,10 +9,12 @@ import './Home.css';
 import sudoku from '../../assets/sudoku.jpg';
 import event from '../../assets/events.jpg';
 import social from '../../assets/social-media.png';
+import { useTranslation } from 'react-i18next';
 
 const Home: React.FC = () => {
   const { theme } = useTheme();
   const controls = useAnimation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const startAnimation = async () => {
@@ -30,18 +32,18 @@ const Home: React.FC = () => {
 
   const projects = [
     {
-      title: 'Sudoku Solver',
-      description: 'An efficient Sudoku solving application.',
+      title: t('projects.sudoku.title'),
+      description: t('projects.sudoku.description'),
       imageUrl: sudoku,
     },
     {
-      title: 'Event Management',
-      description: 'A platform to manage and organize events.',
+      title: t('projects.eventManagement.title'),
+      description: t('projects.eventManagement.description'),
       imageUrl: event,
     },
     {
-      title: 'Social Media App',
-      description: 'A mobile app for connecting with friends.',
+      title: t('projects.socialNetwork.title'),
+      description: t('projects.socialNetwork.description'),
       imageUrl: social,
     },
   ];
@@ -49,8 +51,8 @@ const Home: React.FC = () => {
   return (
     <div className={`home-container ${theme}`}>
       <SEO 
-        title="Home - Adrien BONY"
-        description="Welcome to my portfolio website."
+        title={t('home.welcome')}
+        description={t('home.about.intro')}
         keywords="home, portfolio, web developer"
       />
       <motion.div
@@ -58,8 +60,8 @@ const Home: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={controls}
       >
-        <h1>Welcome to My Portfolio</h1>
-        <h2>I'm Adrien, a Web Developer</h2>
+        <h1>{t('home.welcome')}</h1>
+        <h2>{t('home.subtitle')}</h2>
       </motion.div>
       <div className="about">
         <motion.div
@@ -69,20 +71,14 @@ const Home: React.FC = () => {
         >
           <img src={moi} alt="Adrien BONY" className="profile-pic" />
         </motion.div>
-        <div className="about-text">
-          <p>
-            Hello! I'm Adrien, a passionate web developer with a keen eye for creating beautiful, functional, and user-friendly websites.
-          </p>
-          <p>
-            With 3 years of experience in the field, I've worked on a wide range of projects, from small business websites to large-scale web applications.
-          </p>
-          <p>
-            When I'm not coding, you can find me at the gym. I believe that a well-rounded life contributes to creative problem-solving in my work.
-          </p>
+        <div className="about-text-home">
+          <p>{t('home.about.intro')}</p>
+          <p>{t('home.about.experience')}</p>
+          <p>{t('home.about.personal')}</p>
         </div>
       </div>
       <section className="projects">
-        <h2>My Projects</h2>
+        <h2>{t('home.projects.title')}</h2>
         <div className="project-grid">
           {projects.map((project) => (
             <ProjectCard
@@ -101,7 +97,7 @@ const Home: React.FC = () => {
           whileTap={{ scale: 0.95 }}
           onClick={() => window.location.href = '/contact'}
         >
-          Contact Me
+          {t('home.cta')}
         </motion.button>
       </section>
     </div>

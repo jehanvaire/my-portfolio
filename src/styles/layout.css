@@ -193,6 +193,13 @@
   font-size: 0.8rem;
 }
 
+/* Header controls styles */
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 /* Theme switch styles */
 .theme-switch {
   position: relative;
@@ -278,9 +285,18 @@ input:checked + .slider .moon {
 }
 
 /* Responsive styles */
-@media (max-width: 768px) {
+@media (max-width: 950px) {
+  .header-content {
+    flex-wrap: wrap;
+  }
+
   .menu-toggle {
     display: flex;
+    order: -1; /* This moves the toggle button to the left */
+  }
+
+  .logo {
+    margin: 0 auto; /* This centers the logo */
   }
 
   .nav {
@@ -290,14 +306,23 @@ input:checked + .slider .moon {
     right: 0;
     flex-direction: column;
     align-items: center;
-    background-color: inherit;
+    background-color: var(--header-background); /* Add background color */
     padding: 1rem;
-    clip-path: circle(0% at top right);
+    clip-path: circle(0% at top left); /* Changed to top left */
     transition: clip-path 0.5s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for better visibility */
   }
 
   .nav.open {
-    clip-path: circle(150% at top right);
+    clip-path: circle(150% at top left); /* Changed to top left */
+  }
+
+  .nav a.bn5 {
+    width: 80%; /* Change from 100% to 80% */
+    text-align: center;
+    margin-bottom: 0.5rem;
+    margin-left: auto; /* Center the button */
+    margin-right: auto; /* Center the button */
   }
 
   .footer-content {

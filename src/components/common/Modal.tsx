@@ -10,7 +10,7 @@ interface ModalProps {
   description: string;
   technologies: string[];
   image: string;
-  complementaryText: string;
+  complementaryText?: string;
 }
 
 const Modal: React.FC<ModalProps> = ({ 

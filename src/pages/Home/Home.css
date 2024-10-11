@@ -26,6 +26,10 @@
   margin-bottom: 4rem;
 }
 
+.about-text-home {
+  max-width: 60%;
+}
+
 .profile-pic {
   width: 200px;
   height: 200px;
@@ -72,5 +76,9 @@
   .about {
     flex-direction: column;
     text-align: center;
+  }
+
+  .about-text {
+    max-width: 100%;
   }
 }

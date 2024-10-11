@@ -5,13 +5,15 @@ import SkillCategory from '../../components/skills/SkillCategory';
 import '../../styles/global.css';
 import './Skills.css';
 import {angular, react, canva, typescript, springboot, mysql, git, htmlCss, mongodb, officeSuite, opencv, postgresql, python, cpp, sql, docker, express, vue, tensorflow, csharpDotnet} from '../../assets/tools';
+import { useTranslation } from 'react-i18next';
 
 const Skills: React.FC = () => {
   const { theme } = useTheme();
+  const { t } = useTranslation();
 
   const skillCategories = [
     {
-      title: "The ones I use everyday at work",
+      title: t('skills.categories.everyday'),
       skills: [
         { name: "JS/TS", icon: typescript },
         { name: "Java Spring Boot", icon: springboot },
@@ -25,20 +27,20 @@ const Skills: React.FC = () => {
       ]
     },
     {
-      title: "The ones I really like",
+      title: t('skills.categories.favorite'),
       skills: [
         { name: "Python", icon: python },
         { name: "OpenCV", icon: opencv },
         { name: "TensorFlow", icon: tensorflow },
         { name: "Vue JS", icon: vue },
-        { name: "Office Suite", icon: officeSuite },
+        { name: "Office", icon: officeSuite },
         { name: "Canva", icon: canva },
         { name: "MySQL", icon: mysql },
         { name: "Docker", icon: docker },
       ]
     },
     {
-      title: "The basics",
+      title: t('skills.categories.basics'),
       skills: [
         { name: "C/C++", icon: cpp },
         { name: "HTML/CSS", icon: htmlCss },
@@ -50,12 +52,12 @@ const Skills: React.FC = () => {
   return (
     <div className={`skills-page ${theme}`}>
       <SEO 
-        title="My Skills - Your Name"
-        description="Explore my technical skills in programming languages, development tools, databases, and office suites."
+        title={t('skills.title')}
+        description={t('skills.title')}
         keywords="skills, programming, web development, databases, office suite"
       />
       <div className="skills-content">
-        <h1>My Skills</h1>
+        <h1>{t('skills.title')}</h1>
         {skillCategories.map((category, index) => (
           <SkillCategory key={index} title={category.title} skills={category.skills} />
         ))}

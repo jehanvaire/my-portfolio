@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import "../../styles/global.css";
 import "./Contact.css";
+import { useTranslation } from 'react-i18next';
+import SEO from '../../components/common/SEO';
 
-const Contact = () => {
+const Contact: React.FC = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,10 +30,15 @@ const Contact = () => {
 
   return (
     <div className="contact-page">
-      <h1>Contact Me</h1>
+      <SEO 
+        title={t('contact.title')}
+        description={t('contact.title')}
+        keywords="contact, email, message"
+      />
+      <h1>{t('contact.title')}</h1>
       <form onSubmit={handleSubmit} className="contact-form">
         <div className="form-group">
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">{t('contact.form.name')}</label>
           <input
             type="text"
             id="name"
@@ -41,7 +49,7 @@ const Contact = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">{t('contact.form.email')}</label>
           <input
             type="email"
             id="email"
@@ -52,7 +60,7 @@ const Contact = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="message">Message</label>
+          <label htmlFor="message">{t('contact.form.message')}</label>
           <textarea
             id="message"
             name="message"
@@ -62,7 +70,7 @@ const Contact = () => {
           ></textarea>
         </div>
         <button type="submit" className="submit-btn">
-          Send Message
+          {t('contact.form.send')}
         </button>
       </form>
     </div>

@@ -2,9 +2,11 @@ import React from 'react';
 import { useTheme } from '../../ThemeContext';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import '../../styles/layout.css';
+import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
   const { theme } = useTheme();
+  const { t } = useTranslation();
 
   const socialLinks = [
     { icon: <FaGithub />, url: 'https://github.com/jehanvaire' },
@@ -16,15 +18,15 @@ const Footer: React.FC = () => {
       <div className="footer-content">
         <div className="footer-left">
           <h2>Adrien Bony</h2>
-          <p>Full Stack Developer</p>
+          <p>{t('footer.role')}</p>
         </div>
         <div className="footer-center">
           <ul className="horizontal-list">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/projects">Projects</a></li>
-            <li><a href="/skills">Skills</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a href="/">{t('header.home')}</a></li>
+            <li><a href="/about">{t('header.about')}</a></li>
+            <li><a href="/projects">{t('header.projects')}</a></li>
+            <li><a href="/skills">{t('header.skills')}</a></li>
+            <li><a href="/contact">{t('header.contact')}</a></li>
           </ul>
         </div>
         <div className="footer-right">
@@ -43,7 +45,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Adrien Bony. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Adrien Bony. {t('footer.rights')}</p>
       </div>
     </footer>
   );

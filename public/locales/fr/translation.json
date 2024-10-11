@@ -1,0 +1,66 @@
+{
+  "header": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
+    "skills": "Compétences",
+    "contact": "Contact"
+  },
+  "home": {
+    "welcome": "Bienvenue ! 😊",
+    "subtitle": "Je suis Adrien, Développeur Web",
+    "about": {
+      "intro": "Bonjour ! Je suis Adrien, un développeur passionné, spécialisé dans le développement web.",
+      "experience": "Avec 3 ans d'expérience dans le domaine, j'ai travaillé sur une large gamme de projets, des sites web pour petites entreprises aux applications web à grande échelle.",
+      "personal": "Quand je ne code pas, vous pouvez me trouver à la salle de sport. Je crois que des habitudes saines contribuent à une meilleure productivité et à un travail plus efficace."
+    },
+    "projects": {
+      "title": "Mes Projets",
+      "learnMore": "En savoir plus"
+    },
+    "cta": "Contactez-moi !"
+  },
+  "about": {
+    "title": "À Propos de Moi",
+    "connect": "Faisons connaissance",
+    "cta": "Je suis toujours enthousiaste à l'idée de relever de nouveaux défis et de collaborer sur des projets intéressants. Si vous souhaitez travailler ensemble ou simplement discuter, n'hésitez pas à me contacter !"
+  },
+  "projects": {
+    "title": "Mes Projets",
+    "sudoku": {
+      "title": "Résolveur de Sudoku à partir d'une image",
+      "description": "Un projet Python qui résout des Sudoku à partir d'images. Comprend une application mobile Flutter et une API Flask. Utilise OpenCV et TensorFlow.",
+      "note": "Note : Le projet est le premier projet d'IA sur lequel j'ai travaillé. Il est possible que celui-ci ne soit pas très précis."
+    },
+    "eventManagement": {
+      "title": "Site Web de Gestion d'Événements",
+      "description": "Un système de gestion d'événements basé sur le web utilisant l'API Google Maps. Construit avec HTML/CSS/JavaScript et connecté à Firebase. Comprend une application Android complémentaire.",
+      "note": "Note : Ce projet était le premier projet d'équipe sur lequel j'ai travaillé, il a été un excellent tremplin pour me faire découvrir le développement web."
+    },
+    "socialNetwork": {
+      "title": "Application Mobile de Réseau Social",
+      "description": "Une application mobile combinant les fonctionnalités de LinkedIn et Instagram. Construite avec React Native, utilise une API REST et suit l'architecture MVC. Comprend une application web correspondante."
+    }
+  },
+  "skills": {
+    "title": "Mes Compétences",
+    "categories": {
+      "everyday": "Celles que j'utilise tous les jours au travail",
+      "favorite": "Celles que j'aime beaucoup",
+      "basics": "Les bases"
+    }
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "message": "Message",
+      "send": "Envoyer le Message"
+    }
+  },
+  "footer": {
+    "role": "Développeur Full Stack",
+    "rights": "Tous droits réservés."
+  }
+}
