@@ -56,15 +56,15 @@
   content: "";
   background: linear-gradient(
     45deg,
-    #0000FF,
-    #1E90FF,
-    #4169E1,
-    #6495ED,
-    #87CEFA,
-    #00BFFF,
-    #1E90FF,
-    #4682B4,
-    #0000FF
+    #0000ff,
+    #1e90ff,
+    #4169e1,
+    #6495ed,
+    #87cefa,
+    #00bfff,
+    #1e90ff,
+    #4682b4,
+    #0000ff
   );
   position: absolute;
   top: -2px;
@@ -169,6 +169,11 @@
   font-size: 0.8rem;
 }
 
+.footer-center {
+  margin-right: auto;
+  margin-left: 18rem;
+}
+
 .footer-center .horizontal-list {
   display: flex;
   gap: 1rem;
@@ -222,7 +227,7 @@
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -233,15 +238,15 @@
   left: 4px;
   bottom: 4px;
   background-color: white;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {
@@ -256,12 +261,13 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-.sun, .moon {
+.sun,
+.moon {
   position: absolute;
   width: 20px;
   height: 20px;
   top: 7px;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .sun {
@@ -292,11 +298,11 @@ input:checked + .slider .moon {
 
   .menu-toggle {
     display: flex;
-    order: -1; /* This moves the toggle button to the left */
+    order: -1;
   }
 
   .logo {
-    margin: 0 auto; /* This centers the logo */
+    margin: 0 auto;
   }
 
   .nav {
@@ -306,23 +312,23 @@ input:checked + .slider .moon {
     right: 0;
     flex-direction: column;
     align-items: center;
-    background-color: var(--header-background); /* Add background color */
+    background-color: var(--header-background);
     padding: 1rem;
-    clip-path: circle(0% at top left); /* Changed to top left */
+    clip-path: circle(0% at top left); 
     transition: clip-path 0.5s ease-in-out;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for better visibility */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
   .nav.open {
-    clip-path: circle(150% at top left); /* Changed to top left */
+    clip-path: circle(150% at top left);
   }
 
   .nav a.bn5 {
-    width: 80%; /* Change from 100% to 80% */
+    width: 80%;
     text-align: center;
     margin-bottom: 0.5rem;
-    margin-left: auto; /* Center the button */
-    margin-right: auto; /* Center the button */
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .footer-content {
@@ -334,6 +340,11 @@ input:checked + .slider .moon {
   .footer-center .horizontal-list {
     justify-content: center;
     flex-wrap: wrap;
+  }
+
+  .footer-center {
+    margin-right: auto;
+    margin-left: 10rem;
   }
 
   .footer-right .social-icons {

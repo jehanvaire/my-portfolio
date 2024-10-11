@@ -57,7 +57,10 @@
       "email": "Email",
       "message": "Message",
       "send": "Send Message"
-    }
+    },
+    "linkedinTitle": "Connect on LinkedIn",
+    "linkedinDescription": "Let's connect professionally! Feel free to visit my LinkedIn profile for more information about my experience and skills.",
+    "linkedinButton": "Visit My LinkedIn Profile"
   },
   "footer": {
     "role": "Full Stack Developer",
