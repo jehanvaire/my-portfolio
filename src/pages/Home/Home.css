@@ -1,40 +1,33 @@
 .home-container {
-  max-width: 1200px;
+  max-width: 70vw;
   margin: 0 auto;
   padding: 2rem;
 }
 
-.hero {
+.text-intro {
   text-align: center;
   padding: 4rem 0;
 }
 
-.hero h1 {
+.text-intro h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
 }
 
-.hero h2 {
+.text-intro h2 {
   font-size: 1.5rem;
   color: var(--primary);
 }
 
 .about {
   display: flex;
-  align-items: center;
   gap: 2rem;
-  margin-bottom: 4rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .about-text-home {
   max-width: 60%;
-}
-
-.profile-pic {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
 }
 
 .projects {
@@ -47,10 +40,6 @@
   gap: 2rem;
 }
 
-.skills {
-  margin-bottom: 4rem;
-}
-
 .cta {
   text-align: center;
   padding: 4rem 0;
@@ -58,7 +47,7 @@
 
 .cta-button {
   background-color: var(--primary);
-  color: var(--background);
+  color: var(--invert-text);
   border: none;
   padding: 1rem 2rem;
   font-size: 1.2rem;

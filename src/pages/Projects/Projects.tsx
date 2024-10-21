@@ -1,14 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../../ThemeContext';
-import SEO from '../../components/common/SEO';
-import ProjectCardDetailled from '../../components/common/ProjectCardDetailled';
-import '../../styles/global.css';
-import './Projects.css';
+import SEO from '../../components/common/SEO/SEO';
+import ProjectCardDetailled from '../../components/common/ProjectCard.tsx/ProjectCardDetailled';
 import sudoku from '../../assets/sudoku.jpg';
 import event from '../../assets/events.jpg';
 import social from '../../assets/social-media.png';
 import { useTranslation } from 'react-i18next';
+import './Projects.css';
 
 const Projects: React.FC = () => {
   const { theme } = useTheme();

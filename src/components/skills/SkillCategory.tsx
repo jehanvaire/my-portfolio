@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/skills.css';
+import './SkillCategory.css';
 
 interface SkillCategoryProps {
   title: string;

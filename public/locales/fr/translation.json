@@ -1,7 +1,6 @@
 {
   "header": {
     "home": "Accueil",
-    "about": "À propos",
     "projects": "Projets",
     "skills": "Compétences",
     "contact": "Contact"
@@ -14,16 +13,7 @@
       "experience": "Avec 3 ans d'expérience dans le domaine, j'ai travaillé sur une large gamme de projets, des sites web pour petites entreprises aux applications web à grande échelle.",
       "personal": "Quand je ne code pas, vous pouvez me trouver à la salle de sport. Je crois que des habitudes saines contribuent à une meilleure productivité et à un travail plus efficace."
     },
-    "projects": {
-      "title": "Mes Projets",
-      "learnMore": "En savoir plus"
-    },
-    "cta": "Contactez-moi !"
-  },
-  "about": {
-    "title": "À Propos de Moi",
-    "connect": "Faisons connaissance",
-    "cta": "Je suis toujours enthousiaste à l'idée de relever de nouveaux défis et de collaborer sur des projets intéressants. Si vous souhaitez travailler ensemble ou simplement discuter, n'hésitez pas à me contacter !"
+    "cta": "Voir mes projets"
   },
   "projects": {
     "title": "Mes Projets",
@@ -56,7 +46,7 @@
       "name": "Nom",
       "email": "Email",
       "message": "Message",
-      "send": "Envoyer le Message"
+      "send": "Envoyer"
     },
     "linkedinTitle": "Connectons nous sur LinkedIn",
     "linkedinDescription": "Connectons-nous professionnellement ! N'hésitez pas à visiter mon profil LinkedIn pour plus d'informations sur mon expérience et mes compétences.",

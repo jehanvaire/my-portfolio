@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { useTheme } from '../../ThemeContext';
-import Modal from './Modal';
+import { useTheme } from '../../../ThemeContext';
+import Modal from '../Modal/Modal';
+import './ProjectCard.css';
 
 interface ProjectCardDetailedProps {
   title: string;
@@ -11,7 +12,7 @@ interface ProjectCardDetailedProps {
   complementaryText?: string;
 }
 
-const ProjectCardDetailed: React.FC<ProjectCardDetailedProps> = ({
+const ProjectCardDetailled: React.FC<ProjectCardDetailedProps> = ({
   title,
   description,
   technologies,
@@ -40,7 +41,7 @@ const ProjectCardDetailed: React.FC<ProjectCardDetailedProps> = ({
       <motion.div
         className={`project-card ${theme}`}
         animate={controls}
-        initial={false}
+        initial={{ boxShadow: `0px 5px 15px ${shadowColor}` }}
         whileHover={{
           scale: 1.05,
           boxShadow: `0px 10px 30px ${shadowColor}`,
@@ -79,4 +80,4 @@ const ProjectCardDetailed: React.FC<ProjectCardDetailedProps> = ({
   );
 };
 
-export default ProjectCardDetailed;
+export default ProjectCardDetailled;

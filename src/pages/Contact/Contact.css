@@ -26,6 +26,20 @@
   align-items: center;
 }
 
+.contact-form p {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.contact-form .success {
+  color: green;
+}
+
+.contact-form .error {
+  color: red;
+}
+
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -73,19 +87,6 @@
 
 .submit-btn:hover {
   background-color: var(--accent);
-}
-
-.contact-form p {
-  margin-top: 1rem;
-  font-weight: bold;
-}
-
-.contact-form .success {
-  color: green;
-}
-
-.contact-form .error {
-  color: red;
 }
 
 .linkedin-section {

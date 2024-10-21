@@ -1,8 +1,8 @@
 import React from 'react';
-import { useTheme } from '../../ThemeContext';
+import { useTheme } from '../../../ThemeContext';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import '../../styles/layout.css';
 import { useTranslation } from 'react-i18next';
+import './Footer.css'
 
 const Footer: React.FC = () => {
   const { theme } = useTheme();
@@ -23,7 +23,6 @@ const Footer: React.FC = () => {
         <div className="footer-center">
           <ul className="horizontal-list">
             <li><a href="/">{t('header.home')}</a></li>
-            <li><a href="/about">{t('header.about')}</a></li>
             <li><a href="/projects">{t('header.projects')}</a></li>
             <li><a href="/skills">{t('header.skills')}</a></li>
             <li><a href="/contact">{t('header.contact')}</a></li>

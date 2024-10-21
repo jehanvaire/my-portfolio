@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { useTheme } from '../../ThemeContext';
-import '../../styles/home.css';
+import { useTheme } from '../../../ThemeContext';
+import './ProjectCard.css';
 
 interface ProjectCardProps {
   title: string;

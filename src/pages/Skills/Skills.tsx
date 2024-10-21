@@ -1,11 +1,31 @@
-import React from 'react';
-import { useTheme } from '../../ThemeContext';
-import SEO from '../../components/common/SEO';
-import SkillCategory from '../../components/skills/SkillCategory';
-import '../../styles/global.css';
-import './Skills.css';
-import {angular, react, canva, typescript, springboot, mysql, git, htmlCss, mongodb, officeSuite, opencv, postgresql, python, cpp, sql, docker, express, vue, tensorflow, csharpDotnet} from '../../assets/tools';
-import { useTranslation } from 'react-i18next';
+import React from "react";
+import { useTheme } from "../../ThemeContext";
+import SEO from "../../components/common/SEO/SEO";
+import SkillCategory from "../../components/skills/SkillCategory";
+import {
+  angular,
+  react,
+  canva,
+  typescript,
+  springboot,
+  mysql,
+  git,
+  htmlCss,
+  mongodb,
+  officeSuite,
+  opencv,
+  postgresql,
+  python,
+  cpp,
+  sql,
+  docker,
+  express,
+  vue,
+  tensorflow,
+  csharpDotnet,
+} from "../../assets/tools";
+import { useTranslation } from "react-i18next";
+import "./Skills.css";
 
 const Skills: React.FC = () => {
   const { theme } = useTheme();
@@ -13,7 +33,7 @@ const Skills: React.FC = () => {
 
   const skillCategories = [
     {
-      title: t('skills.categories.everyday'),
+      title: t("skills.categories.everyday"),
       skills: [
         { name: "JS/TS", icon: typescript },
         { name: "Java Spring Boot", icon: springboot },
@@ -24,10 +44,10 @@ const Skills: React.FC = () => {
         { name: "MongoDB", icon: mongodb },
         { name: "PostgreSQL", icon: postgresql },
         { name: "Git", icon: git },
-      ]
+      ],
     },
     {
-      title: t('skills.categories.favorite'),
+      title: t("skills.categories.favorite"),
       skills: [
         { name: "Python", icon: python },
         { name: "OpenCV", icon: opencv },
@@ -37,29 +57,33 @@ const Skills: React.FC = () => {
         { name: "Canva", icon: canva },
         { name: "MySQL", icon: mysql },
         { name: "Docker", icon: docker },
-      ]
+      ],
     },
     {
-      title: t('skills.categories.basics'),
+      title: t("skills.categories.basics"),
       skills: [
         { name: "C/C++", icon: cpp },
         { name: "HTML/CSS", icon: htmlCss },
         { name: "SQL", icon: sql },
-      ]
-    }
+      ],
+    },
   ];
 
   return (
-    <div className={`skills-page ${theme}`}>
-      <SEO 
-        title={t('skills.title')}
-        description={t('skills.title')}
+    <div className={`skills-container ${theme}`}>
+      <SEO
+        title={t("skills.title")}
+        description={t("skills.title")}
         keywords="skills, programming, web development, databases, office suite"
       />
-      <div className="skills-content">
-        <h1>{t('skills.title')}</h1>
+      <h1>{t("skills.title")}</h1>
+      <div className="skill-categories">
         {skillCategories.map((category, index) => (
-          <SkillCategory key={index} title={category.title} skills={category.skills} />
+          <SkillCategory
+            key={index}
+            title={category.title}
+            skills={category.skills}
+          />
         ))}
       </div>
     </div>

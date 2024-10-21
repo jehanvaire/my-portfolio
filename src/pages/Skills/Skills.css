@@ -1,33 +1,86 @@
-.skills-page {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-.skills-content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.skill-badge {
-  background-color: var(--primary);
-  color: var(--background);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  text-align: center;
-  font-weight: bold;
-}
-
-@media (max-width: 768px) {
-  .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+.skills-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
   }
-}
+  
+  .skills-container h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: var(--text-primary);
+  }
+  
+  .skill-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60vw, 1fr));
+    gap: 2rem;
+  }
+  
+  .skill-category {
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px var(--shadow-color);
+  }
+  
+  .skill-category h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+  }
+  
+  .skill-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .skill-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0.8rem;
+  }
+  
+  .skill-item span {
+    font-size: 1rem;
+    color: var(--text-secondary);
+  }
+  
+  @media (max-width: 768px) {
+    .skills-container {
+      padding: 1rem;
+    }
+  
+    .skills-container h1 {
+      font-size: 2rem;
+    }
+  
+    .skill-categories {
+      grid-template-columns: 1fr;
+    }
+  
+    .skill-category {
+      padding: 1.5rem;
+    }
+  
+    .skill-category h2 {
+      font-size: 1.5rem;
+    }
+  
+    .skill-list {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+  
+    .skill-item img {
+      width: 50px;
+      height: 50px;
+    }
+  }

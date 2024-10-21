@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import "../../styles/global.css";
 import "./Contact.css";
 import { useTranslation } from 'react-i18next';
-import SEO from '../../components/common/SEO';
+import SEO from '../../components/common/SEO/SEO';
 import { FaLinkedin } from 'react-icons/fa';
 
 const Contact: React.FC = () => {
