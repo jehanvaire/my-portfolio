@@ -7,20 +7,17 @@
   },
   "home": {
     "welcome": "Welcome! 😊",
-    "subtitle": "I'm Adrien, a Web Developer",
+    "subtitle": "I'm Adrien, a Full Stack Web Developer",
     "about": {
       "intro": "Hello! I'm Adrien, a passionate developer, specialized in web development.",
       "experience": "With 3 years of experience in the field, I've worked on a wide range of projects, from small business websites to large-scale web applications.",
       "personal": "When I'm not coding, you can find me at the gym. I believe that healthy habits contribute to better productivity and more efficient work."
     },
-    "projects": {
-      "title": "My Projects",
-      "learnMore": "Learn More"
-    },
-    "cta": "Contact Me!"
+    "cta": "My Projects"
   },
   "projects": {
     "title": "My Projects",
+    "description": "Here are some of the projects I've worked on. More are coming soon!",
     "sudoku": {
       "title": "Sudoku Solver from Image",
       "description": "A Python project that solves Sudoku puzzles from images. Includes a Flutter mobile app and a Flask API. Uses OpenCV and TensorFlow.",
@@ -34,7 +31,8 @@
     "socialNetwork": {
       "title": "Social Network Mobile App",
       "description": "A mobile application combining features of LinkedIn and Instagram. Built with React Native, uses REST API, and follows MVC architecture. Includes a web application counterpart."
-    }
+    },
+    "cta": "My Skills"
   },
   "skills": {
     "title": "My Skills",

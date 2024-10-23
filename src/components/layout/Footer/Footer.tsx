@@ -27,6 +27,9 @@ const Footer: React.FC = () => {
             <li><a href="/skills">{t('header.skills')}</a></li>
             <li><a href="/contact">{t('header.contact')}</a></li>
           </ul>
+          <div className="footer-bottom">
+          <p>&copy; {new Date().getFullYear()} Adrien Bony. {t('footer.rights')}</p>
+        </div>
         </div>
         <div className="footer-right">
           <div className="social-icons">
@@ -43,9 +46,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Adrien Bony. {t('footer.rights')}</p>
-      </div>
+
     </footer>
   );
 };

@@ -18,6 +18,7 @@ import sql from './sql.svg';
 import tensorflow from './tensorflow.svg';
 import typescript from './typescript.svg';
 import vue from './vue.svg';
+import go from './go.svg';
 
 export {
   angular,
@@ -40,4 +41,5 @@ export {
   tensorflow,
   typescript,
   vue,
+  go,
 };

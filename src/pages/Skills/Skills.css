@@ -1,7 +1,6 @@
 .skills-container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 2rem;
   }
   
   .skills-container h1 {
@@ -21,7 +20,7 @@
     background-color: var(--bg-secondary);
     border-radius: 8px;
     padding: 2rem;
-    box-shadow: 0 4px 6px var(--shadow-color);
+    box-shadow: 0 8px 24px var(--shadow-color);
   }
   
   .skill-category h2 {
@@ -52,6 +51,27 @@
   .skill-item span {
     font-size: 1rem;
     color: var(--text-secondary);
+  }
+
+  .cta {
+    text-align: center;
+    padding: 4rem 0;
+  }
+  
+  .cta-button {
+    background-color: var(--primary);
+    color: var(--invert-text);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .cta-button:hover {
+    background-color: var(--accent);
+    transform: scale(1.05);
   }
   
   @media (max-width: 768px) {

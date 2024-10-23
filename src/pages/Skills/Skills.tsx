@@ -23,9 +23,11 @@ import {
   vue,
   tensorflow,
   csharpDotnet,
+  go,
 } from "../../assets/tools";
 import { useTranslation } from "react-i18next";
 import "./Skills.css";
+import { motion } from "framer-motion";
 
 const Skills: React.FC = () => {
   const { theme } = useTheme();
@@ -57,6 +59,7 @@ const Skills: React.FC = () => {
         { name: "Canva", icon: canva },
         { name: "MySQL", icon: mysql },
         { name: "Docker", icon: docker },
+        { name: "Go", icon: go },
       ],
     },
     {
@@ -86,6 +89,17 @@ const Skills: React.FC = () => {
           />
         ))}
       </div>
+
+      <section className="cta">
+        <motion.button
+          className="cta-button"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => (window.location.href = "/contact")}
+        >
+          {t("contact.title")}
+        </motion.button>
+      </section>
     </div>
   );
 };

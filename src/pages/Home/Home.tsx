@@ -1,11 +1,7 @@
 import React, { useEffect } from "react";
 import SEO from "../../components/common/SEO/SEO";
 import { motion, useAnimation } from "framer-motion";
-import ProjectCard from "../../components/common/ProjectCard.tsx/ProjectCard";
 import { useTheme } from "../../ThemeContext";
-import sudoku from "../../assets/sudoku.jpg";
-import event from "../../assets/events.jpg";
-import social from "../../assets/social-media.png";
 import { useTranslation } from "react-i18next";
 import ProfilePic from "../../components/common/ProfilePic/ProfilePic";
 import "./Home.css";
@@ -27,24 +23,6 @@ const Home: React.FC = () => {
     };
     startAnimation();
   }, [controls]);
-
-  const projects = [
-    {
-      title: t("projects.sudoku.title"),
-      description: t("projects.sudoku.description"),
-      imageUrl: sudoku,
-    },
-    {
-      title: t("projects.eventManagement.title"),
-      description: t("projects.eventManagement.description"),
-      imageUrl: event,
-    },
-    {
-      title: t("projects.socialNetwork.title"),
-      description: t("projects.socialNetwork.description"),
-      imageUrl: social,
-    },
-  ];
 
   return (
     <div className={`home-container ${theme}`}>

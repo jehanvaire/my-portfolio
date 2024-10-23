@@ -50,6 +50,7 @@ const Projects: React.FC = () => {
         className="projects-content"
       >
         <h1>{t('projects.title')}</h1>
+        <p className="projects-description">{t('projects.description')}</p>
         <div className="projects-grid">
           {projectsData.map((project, index) => (
             <ProjectCardDetailled
@@ -59,6 +60,17 @@ const Projects: React.FC = () => {
           ))}
         </div>
       </motion.div>
+
+      <section className="cta">
+        <motion.button
+          className="cta-button"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => (window.location.href = "/skills")}
+        >
+          {t("projects.cta")}
+        </motion.button>
+      </section>
     </div>
   );
 };

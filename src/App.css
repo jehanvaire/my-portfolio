@@ -4,6 +4,7 @@
   --header-background: #FFF;
   --footer-background: #FFF;
   --background: #f5f9fa;
+  --modal-background: #FFF;
   --primary: #2ecc71;
   --secondary: #27ae60;
   --accent: #16a085;
@@ -23,6 +24,7 @@
   --background: linear-gradient(135deg, #0f2213 0%, #1a3a20 100%);
   --header-background: #1a2e1f;
   --footer-background: #1a2e1f;
+  --modal-background: #1a2e1f;
   --primary: #2ecc71;
   --secondary: #27ae60;
   --accent: #16a085;

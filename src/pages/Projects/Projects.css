@@ -1,7 +1,6 @@
 .projects-page {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem;
   min-height: calc(100vh - 250px);
   display: flex;
   flex-direction: column;
@@ -14,14 +13,46 @@
   gap: 2rem;
 }
 
+.projects-content h1 {
+  text-align: center;
+}
+
+.projects-description {
+  text-align: center;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
+  max-width: 100%;
+}
+
+.cta {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.cta-button {
+  background-color: var(--primary);
+  color: var(--invert-text);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.cta-button:hover {
+  background-color: var(--accent);
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
+    max-width: 90%;
+    margin: 0 auto;
   }
 }
